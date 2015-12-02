@@ -9,6 +9,8 @@
 
 Game* g_game = NULL;
 
+
+
 int main(int argc, char *argv[])
 {
     g_game = new Game();

@@ -1,7 +1,10 @@
 #include <iostream>
+#include <map>
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
+
+#include "texture_manager.h"
 
 bool TextureManager::load(
     std::string fileName, std::string id, SDL_Renderer* pRenderer
