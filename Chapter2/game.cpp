@@ -62,7 +62,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     m_destinationRectangle.h = m_sourceRectangle.h;
     */
 
-    m_textureManager.load("assets/animate-alpha.png", "animate", m_pRenderer);
+    //m_textureManager.load("assets/animate-alpha.png", "animate", m_pRenderer);
+    if(!TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer)){
+		return false;
+	}
+
 
     return true;    
 }
@@ -77,8 +81,9 @@ void Game::render()
     //SDL_RenderCopyEx(m_pRenderer, m_pTexture, &m_sourceRectangle, &m_destinationRectangle, 0, 0, SDL_FLIP_HORIZONTAL);
 
     //SDL_RenderCopy(m_pRenderer, m_pTexture, NULL, NULL);
-    m_textureManager.draw("animate", 0, 0, 128, 82, m_pRenderer);
-    m_textureManager.drawFrame("animate", 100, 100, 128, 82, 1, m_currentFrame, m_pRenderer);
+    //m_textureManager.draw("animate", 0, 0, 128, 82, m_pRenderer);
+    TheTextureManager::Instance()->draw("animate", 0, 0, 128, 82, m_pRenderer);
+    //m_textureManager.drawFrame("animate", 100, 100, 128, 82, 1, m_currentFrame, m_pRenderer);
 
     SDL_RenderPresent(m_pRenderer);
 }
