@@ -2,6 +2,8 @@
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
+
+#include "texture_manager.h"
 #include "game.h"
 
 Game::Game()
