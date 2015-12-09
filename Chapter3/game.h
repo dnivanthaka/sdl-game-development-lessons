@@ -2,7 +2,10 @@
 #define __GAME_H__
 
 #include "SDL2/SDL.h"
+#include "Player.h"
+#include "GameObject.h"
 #include "texture_manager.h"
+
 
 class Game
 {
@@ -22,6 +25,9 @@ class Game
     SDL_Texture* m_pTexture;
     SDL_Rect m_sourceRectangle;
     SDL_Rect m_destinationRectangle;
+
+    GameObject m_go;
+    Player m_player;
 
 
     int m_currentFrame;
